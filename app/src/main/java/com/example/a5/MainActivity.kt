@@ -141,14 +141,12 @@ class MainActivity : AppCompatActivity() {
         }
 
         bo.setOnClickListener {
-            if (!tv.text.toString().toFloat(".")) {
+            if (!tv.text.toString().contains(".")) {
                 tv.text = tv.text.toString() + "."
             }
         }
 
-
-
-        be.setOnClickListener {
+      be.setOnClickListener {
             if (op == "+") {
                 total = input + tv.text.toString().toInt()
                 tv.setText(total.toString())
@@ -166,5 +164,8 @@ class MainActivity : AppCompatActivity() {
                 tv.setText(total.toString())
             }
         }
+
+
+
     }
 }
