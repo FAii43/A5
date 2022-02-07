@@ -2,6 +2,7 @@ package com.example.a5
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -100,6 +101,70 @@ class MainActivity : AppCompatActivity() {
                 tv.setText(tv.text.toString().dropLast(1))
             }
         }
+            var input = 0
+            var op:String = ""
+            var total = 0
 
+        bpp.setOnClickListener {
+            input = tv.text.toString().toInt()
+            op = "+"
+            tv.setText("0")
+        }
+
+        bde.setOnClickListener {
+            input = tv.text.toString().toInt()
+            op = "-"
+            tv.setText("0")
+        }
+
+        bx.setOnClickListener {
+            input = tv.text.toString().toInt()
+            op = "*"
+            tv.setText("0")
+        }
+
+        bl.setOnClickListener {
+            input = tv.text.toString().toInt()
+            op = "/"
+            tv.setText("0")
+        }
+
+        bp.setOnClickListener {
+            input = tv.text.toString().toInt()
+            op = "%"
+            tv.setText("0")
+        }
+        bp.setOnClickListener {
+            input = tv.text.toString().toInt()
+            op = "%"
+            tv.setText("0")
+        }
+
+        bo.setOnClickListener {
+            if (!tv.text.toString().toFloat(".")) {
+                tv.text = tv.text.toString() + "."
+            }
+        }
+
+
+
+        be.setOnClickListener {
+            if (op == "+") {
+                total = input + tv.text.toString().toInt()
+                tv.setText(total.toString())
+            } else if (op == "-") {
+                total = input - tv.text.toString().toInt()
+                tv.setText(total.toString())
+            } else if (op == "*") {
+                total = input * tv.text.toString().toInt()
+                tv.setText(total.toString())
+            } else if (op == "/") {
+                total = input / tv.text.toString().toInt()
+                tv.setText(total.toString())
+            }else if (op == "%") {
+                total = input % tv.text.toString().toInt()
+                tv.setText(total.toString())
+            }
+        }
     }
 }
